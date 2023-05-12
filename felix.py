@@ -1,8 +1,8 @@
-import mariadb
+import mysql.connector
 import json
 
 def maakverbinding():
-    mydb = mariadb.connect(
+    mydb = mysql.connector.connect(
         host="dbycolvrijdag1.mysql.database.azure.com",
         port=3306, 
         user="felixdeadmin",
