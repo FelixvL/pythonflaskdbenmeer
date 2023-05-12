@@ -5,3 +5,8 @@ app = Flask(__name__)
 @app.route("/felix/<eerstetest>")
 def felixmethode(eerstetest):
     return felix.felixstart(eerstetest)
+
+
+@app.route("/felix/allefietsen")
+def felixmethode2():
+    return felix.toonAlleFietsen()

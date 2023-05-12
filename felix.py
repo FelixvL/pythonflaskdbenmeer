@@ -1,4 +1,6 @@
 import mariadb
+import json
+
 def maakverbinding():
     mydb = mariadb.connect(
         host="dbycolvrijdag1.mysql.database.azure.com",
@@ -21,3 +23,10 @@ def felixstart(deparam):
     dedb.commit()
     print("in de methode van felix")
     return "hij doet het"+deparam
+
+def toonAlleFietsen():
+    dedb = maakverbinding()
+    mycursor = dedb.cursor()
+    mycursor.execute("SELECT * FROM fiets")
+    myresult = mycursor.fetchall()
+    return json.dumps(myresult)
