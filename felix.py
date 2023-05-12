@@ -1,5 +1,7 @@
 import mysql.connector
 import json
+import pandas
+
 
 def maakverbinding():
     mydb = mysql.connector.connect(
@@ -30,3 +32,18 @@ def toonAlleFietsen():
     mycursor.execute("SELECT * FROM fiets")
     myresult = mycursor.fetchall()
     return json.dumps(myresult)
+
+def leesuitcsv():
+    print("csv lezen in python")
+    totalstring = ""
+    hetdf = pandas.read_csv("Pokemon.csv")
+
+    print(hetdf.columns)
+
+    for pokemon in hetdf["Name"]:
+        print(pokemon)
+
+    for i, pokemon in hetdf.iterrows():
+        print(pokemon["Name"]+"met de kracht", pokemon["Attack"])
+        totalstring += "de "+pokemon["Name"]+" heeft als strength "+str(pokemon["Attack"])+"<br>"
+    return totalstring

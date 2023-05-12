@@ -10,3 +10,7 @@ def felixmethode(eerstetest):
 @app.route("/felix3/allefietsen")
 def felixmethode2():
     return felix.toonAlleFietsen()
+
+@app.route("/felix4/leescsv")
+def felixmethode3():
+    return felix.leesuitcsv()
