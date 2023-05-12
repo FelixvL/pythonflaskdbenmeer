@@ -7,8 +7,8 @@ def maakverbinding():
         port=3306, 
         user="felixdeadmin",
         password="abcd1234ABCD!@#$",
-        database="ycolfieldvrijdag",
-        ssl=True
+        database="ycolfieldvrijdag"
+        #ssl=True
     )
     return mydb
 

@@ -7,6 +7,6 @@ def felixmethode(eerstetest):
     return felix.felixstart(eerstetest)
 
 
-@app.route("/felix/allefietsen")
+@app.route("/felix3/allefietsen")
 def felixmethode2():
     return felix.toonAlleFietsen()
